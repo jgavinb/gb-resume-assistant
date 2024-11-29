@@ -1,3 +1,2 @@
-json
 PyPDF2
 groq

@@ -1,4 +1,3 @@
-import json
 import PyPDF2
 import streamlit as st
 from groq import Groq
