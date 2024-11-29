@@ -1,18 +1,10 @@
 import os
 import json
-import PyPDF2
 import streamlit as st
 from groq import Groq
 
 # read in resume
-with open("brumfield_gavin.pdf", "rb") as file:
-    pdf_reader = PyPDF2.PdfReader(file)
-    num_pages = len(pdf_reader.pages)
-
-    resume_text = ""
-    for page_num in range(num_pages):
-        page = pdf_reader.pages[page_num]
-        text += page.extract_text()
+resume_text = open("resume.rtf").read()
 
 # streamlit page config
 st.set_page_config(
