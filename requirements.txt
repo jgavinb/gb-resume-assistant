@@ -1,5 +1,3 @@
-os
 json
 PyPDF2
-streamlit
 groq
