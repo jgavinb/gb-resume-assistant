@@ -1,11 +1,11 @@
 import os
 import json
-from docx import Document
+import docx
 import streamlit as st
 from groq import Groq
 
 # read in resume
-resume = Document("brumfield_gavin.docx")
+resume = docx.Document("brumfield_gavin.docx")
 resume_text = "\n".join([p.text for p in resume.paragraphs])
 
 # streamlit page config
