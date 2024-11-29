@@ -42,7 +42,7 @@ user_prompt = st.chat_input("Ask me anything...")
 if user_prompt:
 
     st.chat_message("user").markdown(user_prompt)
-    st.ession_state.chat_history.append({"role": "user", "content": user_prompt})
+    st.session_state.chat_history.append({"role": "user", "content": user_prompt})
 
     # send user message to LLM and get a response
     messages = [
