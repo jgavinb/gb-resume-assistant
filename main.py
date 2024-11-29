@@ -1,12 +1,18 @@
 import os
 import json
-import docx
+import PyPDF2
 import streamlit as st
 from groq import Groq
 
 # read in resume
-resume = docx.Document("brumfield_gavin.docx")
-resume_text = "\n".join([p.text for p in resume.paragraphs])
+with open("brumfield_gavin.pdf", "rb") as file:
+    pdf_reader = PyPDF2.PdfReader(file)
+    num_pages = len(pdf_reader.pages)
+
+    resume_text = ""
+    for page_num in range(num_pages):
+        page = pdf_reader.pages[page_num]
+        text += page.extract_text()
 
 # streamlit page config
 st.set_page_config(
