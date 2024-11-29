@@ -1,4 +1,3 @@
-import os
 import json
 import PyPDF2
 import streamlit as st
@@ -21,16 +20,8 @@ st.set_page_config(
     layout="centered"
 )
 
-working_dir = os.path.dirname(os.path.abspath(__file__))
-config_data = json.load(open(f"{working_dir}/config.json"))
-
-
-GROQ_API_KEY = config_data["GROQ_API_KEY"]
-
-# save the api key to environment
-os.environ["GROQ_API_KEY"] = GROQ_API_KEY
-
-client = Groq()
+# initialize GROQ client
+client = Groq(api_key="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")
 
 # initialize the chat history as streamlit session state if not present already
 if "chat_history" not in st.session_state:
