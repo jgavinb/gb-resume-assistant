@@ -14,7 +14,7 @@ with open("brumfield_gavin.pdf", "rb") as file:
 
 # streamlit page config
 st.set_page_config(
-    page_title="🤖gavChat 1.0",
+    page_title="🤖 gavChat 1.0",
     page_icon="🤖",
     layout="centered"
 )
