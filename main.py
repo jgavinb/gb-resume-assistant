@@ -28,7 +28,7 @@ if "chat_history" not in st.session_state:
 
 
 # streamlit title
-st.title("🤖 gavChat: Gavin Brumfield's Resume Assistant")
+st.title("🤖 gavChat 1.0")
 st.text("LLAMA3-70B-8192 trained on my resume to answer any questions you have!")
 
 # display chat history
