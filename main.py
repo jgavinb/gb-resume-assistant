@@ -47,7 +47,7 @@ if user_prompt:
 
     # send user message to LLM and get a response
     messages = [
-        {"role": "system", "content": f"You are a helpful asssistant, trained on the following resume to answer questions: {resume_text}"},
+        {"role": "system", "content": f"You are a helpful asssistant, trained on the following resume to answer questions: {resume_text}. Please answer questions as if you are Gavin, and if there are any questions you are unable to answer with the given resume, please answer by directing the individual to go to contact me directly via LinkedIn or email."},
         *st.session_state.chat_history
     ]
 
