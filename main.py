@@ -14,7 +14,7 @@ with open("brumfield_gavin.pdf", "rb") as file:
 
 # streamlit page config
 st.set_page_config(
-    page_title="gavChat 1.0",
+    page_title="gavChat",
     page_icon="🤖",
     layout="centered"
 )
@@ -28,7 +28,7 @@ if "chat_history" not in st.session_state:
 
 
 # streamlit title
-st.title("🤖 gavChat 1.0")
+st.title("🤖 gavChat: Gavin Brumfield's Resume Assistant")
 st.text("LLAMA3-70B-8192 trained on my resume to answer any questions you have!")
 
 # display chat history
