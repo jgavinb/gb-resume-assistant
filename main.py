@@ -29,7 +29,8 @@ if "chat_history" not in st.session_state:
 
 # streamlit title
 st.title("🤖 gavChat 1.0")
-st.info("LLAMA3-70B-8192 trained on my resume to answer any questions you may have!")
+st.info('''LLAMA3-70B-8192 trained on my resume to answer any questions you may have!
+- [LinkedIn](https://www.linkedin.com/in/gavinbrumfield)''')
 
 # display chat history
 for message in st.session_state.chat_history:
