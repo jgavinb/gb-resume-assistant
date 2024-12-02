@@ -3,7 +3,7 @@ import streamlit as st
 from groq import Groq
 
 # read in resume
-with open("brumfield_gavin.pdf", "rb") as file:
+with open("resume.pdf", "rb") as file:
     pdf_reader = PyPDF2.PdfReader(file)
     num_pages = len(pdf_reader.pages)
 
@@ -11,6 +11,16 @@ with open("brumfield_gavin.pdf", "rb") as file:
     for page_num in range(num_pages):
         page = pdf_reader.pages[page_num]
         resume_text += page.extract_text()
+
+# read in personal statement
+with open("personal_statement.pdf", "rb") as file:
+    pdf_reader = PyPDF2.PdfReader(file)
+    num_pages = len(pdf_reader.pages)
+
+    personal_statement_text = ""
+    for page_num in range(num_pages):
+        page = pdf_reader.pages[page_num]
+        personal_statement_text += page.extract_text()
 
 # streamlit page config
 st.set_page_config(
@@ -51,7 +61,7 @@ if user_prompt:
 
     # send user message to LLM and get a response
     messages = [
-        {"role": "system", "content": f"You are trained on the following resume to answer questions: {resume_text}. If you are not able to answer a question please state this and refer the user to Gavin Brumfield's LinkedIn (https://www.linkedin.com/in/gavinbrumfield) to contact him to learn more."},
+        {"role": "system", "content": f"You are trained on the following resume to answer questions: {resume_text}. If you are not able to answer a question please state this and refer the user to Gavin Brumfield's LinkedIn (https://www.linkedin.com/in/gavinbrumfield) to contact him to learn more. Additionally, Gavin's GitHub is (https://www.github.com/jgavinb) and his resume is available at (https://gavinb.streamlit.app). You may additionally use his personal statement for any additional context for responses: {personal_statement_text}"},
         *st.session_state.chat_history
     ]
 
