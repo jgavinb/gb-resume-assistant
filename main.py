@@ -30,6 +30,7 @@ if "chat_history" not in st.session_state:
 # streamlit title
 st.title("🤖 gavChat 1.0")
 st.info('''LLAMA3-70B-8192 trained on my resume to answer any questions you may have!
+- [Resume](https://gavinb.streamlit.app)
 - [LinkedIn](https://www.linkedin.com/in/gavinbrumfield)
 - [GitHub](https://www.github.com/jgavinb)
 ''')
